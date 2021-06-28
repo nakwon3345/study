@@ -1,0 +1,60 @@
+package prac0628;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Test {
+		public static void main(String[] args) {
+			/**
+			 * Collection : ArrayList
+			 */
+			String[] arr1 = {"피카츄","파이리","꼬부기","팽도리","치코리타"};
+			String[] arr2 = {"아구몬","가루몬","파닥몬","텐타몬","가트몬"};
+			
+			ArrayList<String> list = new ArrayList<String>();
+			list.addAll(Arrays.asList(arr1));
+			list.addAll(Arrays.asList(arr2));
+			
+			for(int i = 0; i < list.size(); i++) {
+				System.out.println(list.get(i));
+			}
+			
+			
+			/*
+			 * Collection : Map
+			 */
+			HashMap<String, Integer> map = new HashMap<>();
+			map.put("백원", 100);
+			map.put("천원", 1000);
+			map.put("만원", 10000);
+			map.put("십만원", 100000);
+			map.put("백만원", 1000000);
+			
+			System.out.println(map);
+			for(String i : map.keySet()) {
+				System.out.println("[Key] : " + i + " [Value] : " + map.get(i) );
+			}
+			
+			/**
+			 * 배열
+			 */
+			int[][] array = new int[5][5];
+			
+			for(int i = 0; i < array.length; i++) {
+				for(int j = 0; j < array.length; j++) {
+					System.out.println(i + ":" + j);
+				}
+			}
+			
+			/**
+			 * 예외처리
+			 */
+			try {
+			int [] array1 = new int[10];
+			array1[20] = 5;
+			}catch(ArrayIndexOutOfBoundsException e) {
+				System.out.println(e);
+			}
+		}			
+}
